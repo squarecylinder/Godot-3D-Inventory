@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemDataEquip" load_steps=4 format=3 uid="uid://dviqclvfb1245"]
+
+[ext_resource type="Script" path="res://item/item_data_equip.gd" id="1_2a733"]
+[ext_resource type="Texture2D" uid="uid://c51gemiqk4lxk" path="res://item/#1 - Transparent Icons.png" id="2_msr1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvrxr"]
+atlas = ExtResource("2_msr1x")
+region = Rect2(96, 224, 32, 32)
+
+[resource]
+script = ExtResource("1_2a733")
+defense = 1
+name = "Iron Helm"
+description = "A mighty helmet meant to protect your head!"
+stackable = false
+texture = SubResource("AtlasTexture_dvrxr")

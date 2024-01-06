@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=12 format=3 uid="uid://2evue3anpkg7"]
+
+[ext_resource type="Script" path="res://inventory/inventory_data.gd" id="1_uigey"]
+[ext_resource type="Resource" uid="uid://cn5vjjsla8ph" path="res://item/items/health_potion.tres" id="2_ixyvc"]
+[ext_resource type="Resource" uid="uid://xe243bvsc0lk" path="res://item/items/apple.tres" id="2_y835m"]
+[ext_resource type="Script" path="res://inventory/slot_data.gd" id="3_rpgud"]
+[ext_resource type="Resource" uid="uid://dmjvj1xo3ml5e" path="res://item/items/blue_book.tres" id="4_a8eiu"]
+[ext_resource type="Resource" uid="uid://dviqclvfb1245" path="res://item/items/iron_helm.tres" id="4_j17ar"]
+
+[sub_resource type="Resource" id="Resource_u5as1"]
+script = ExtResource("3_rpgud")
+item_data = ExtResource("2_ixyvc")
+quantity = 4
+
+[sub_resource type="Resource" id="Resource_mnk5x"]
+script = ExtResource("3_rpgud")
+item_data = ExtResource("4_j17ar")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_cofgf"]
+script = ExtResource("3_rpgud")
+item_data = ExtResource("2_y835m")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_5x3i7"]
+script = ExtResource("3_rpgud")
+item_data = ExtResource("2_y835m")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_f56rs"]
+script = ExtResource("3_rpgud")
+item_data = ExtResource("4_a8eiu")
+quantity = 1
+
+[resource]
+script = ExtResource("1_uigey")
+slot_datas = Array[ExtResource("3_rpgud")]([SubResource("Resource_u5as1"), SubResource("Resource_mnk5x"), SubResource("Resource_cofgf"), SubResource("Resource_5x3i7"), null, null, SubResource("Resource_f56rs"), null, null, null, null, null, null, null, null, null, null, null])
