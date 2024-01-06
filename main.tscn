@@ -1,16 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://ck40dd33kwb65"]
+[gd_scene load_steps=24 format=3 uid="uid://ck40dd33kwb65"]
 
 [ext_resource type="PackedScene" uid="uid://kblr0tl4mxsr" path="res://player/player.tscn" id="1_46ny8"]
 [ext_resource type="Script" path="res://main.gd" id="1_rkwgs"]
-[ext_resource type="PackedScene" uid="uid://yki2vd45f4wa" path="res://inventory/inventory.tscn" id="2_3gvf1"]
-[ext_resource type="Script" path="res://inventory/inventory_interface.gd" id="3_0rhga"]
-[ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="3_sad7w"]
-[ext_resource type="PackedScene" uid="uid://c2bws1dv86vam" path="res://inventory/slot.tscn" id="5_mylvo"]
+[ext_resource type="PackedScene" uid="uid://yki2vd45f4wa" path="res://inventory/scenes/inventory.tscn" id="2_3gvf1"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_interface.gd" id="3_0rhga"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_data_equip.gd" id="3_sad7w"]
+[ext_resource type="PackedScene" uid="uid://c2bws1dv86vam" path="res://inventory/scenes/slot.tscn" id="5_mylvo"]
 [ext_resource type="PackedScene" uid="uid://br65l0xbbh8sn" path="res://interactable/chest.tscn" id="6_ccg7t"]
-[ext_resource type="PackedScene" uid="uid://ciws3g5xxitq3" path="res://inventory/hot_bar_inventory.tscn" id="6_ku4ib"]
-[ext_resource type="Script" path="res://inventory/inventory_data.gd" id="7_ku0nv"]
+[ext_resource type="PackedScene" uid="uid://ciws3g5xxitq3" path="res://inventory/scenes/hot_bar_inventory.tscn" id="6_ku4ib"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_data.gd" id="7_ku0nv"]
 [ext_resource type="Resource" uid="uid://dmjvj1xo3ml5e" path="res://item/items/blue_book.tres" id="8_cgxik"]
-[ext_resource type="Script" path="res://inventory/slot_data.gd" id="9_51xf6"]
+[ext_resource type="Script" path="res://inventory/scripts/slot_data.gd" id="9_51xf6"]
 [ext_resource type="PackedScene" uid="uid://dvphjhibxbsva" path="res://item/pick_up/pick_up.tscn" id="10_djvfw"]
 [ext_resource type="Resource" uid="uid://xe243bvsc0lk" path="res://item/items/apple.tres" id="11_6wvku"]
 
@@ -32,6 +32,10 @@ size = Vector2(20, 20)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c1cwi"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[sub_resource type="Resource" id="Resource_rmpdx"]
+script = ExtResource("7_ku0nv")
+slot_datas = Array[ExtResource("9_51xf6")]([null, null, null, null, null, null])
 
 [sub_resource type="Resource" id="Resource_235hy"]
 script = ExtResource("3_sad7w")
@@ -70,6 +74,7 @@ mesh = SubResource("PlaneMesh_b8qrh")
 shape = SubResource("ConcavePolygonShape3D_c1cwi")
 
 [node name="Player" parent="." instance=ExtResource("1_46ny8")]
+hot_bar_inventory_data = SubResource("Resource_rmpdx")
 equip_inventory_data = SubResource("Resource_235hy")
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -116,10 +121,17 @@ offset_right = 64.0
 offset_bottom = 64.0
 
 [node name="HotBarInventory" parent="UI" instance=ExtResource("6_ku4ib")]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 362.0
-offset_bottom = 90.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -98.0
+offset_right = 176.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Chest" parent="." instance=ExtResource("6_ccg7t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)

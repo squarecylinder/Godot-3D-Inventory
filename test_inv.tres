@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryData" load_steps=12 format=3 uid="uid://2evue3anpkg7"]
 
-[ext_resource type="Script" path="res://inventory/inventory_data.gd" id="1_uigey"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_data.gd" id="1_uigey"]
 [ext_resource type="Resource" uid="uid://cn5vjjsla8ph" path="res://item/items/health_potion.tres" id="2_ixyvc"]
 [ext_resource type="Resource" uid="uid://xe243bvsc0lk" path="res://item/items/apple.tres" id="2_y835m"]
-[ext_resource type="Script" path="res://inventory/slot_data.gd" id="3_rpgud"]
+[ext_resource type="Script" path="res://inventory/scripts/slot_data.gd" id="3_rpgud"]
 [ext_resource type="Resource" uid="uid://dmjvj1xo3ml5e" path="res://item/items/blue_book.tres" id="4_a8eiu"]
 [ext_resource type="Resource" uid="uid://dviqclvfb1245" path="res://item/items/iron_helm.tres" id="4_j17ar"]
 
