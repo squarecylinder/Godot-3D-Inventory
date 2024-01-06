@@ -28,7 +28,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b8qrh"]
-size = Vector2(20, 20)
+size = Vector2(50, 50)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c1cwi"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
@@ -134,11 +134,11 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Chest" parent="." instance=ExtResource("6_ccg7t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+transform = Transform3D(1.11, 0, 0, 0, 1, 0, 0, 0, 1.11, 0, 0.295669, -4)
 inventory_data = SubResource("Resource_tffhs")
 
 [node name="PickUp" parent="." instance=ExtResource("10_djvfw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0764964, 1.3193, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0764964, 1.52374, -4)
 slot_data = SubResource("Resource_5dge3")
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
